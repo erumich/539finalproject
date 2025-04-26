@@ -16,6 +16,17 @@ document.querySelectorAll('.lbl-toggle').forEach(label => {
   });
 });
 
+// keyboard nav access
+function toggleMenu(event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    const menuCheckbox = document.getElementById("menu");
+    const menuLabel = document.querySelector('label[for="menu"]');
+    menuCheckbox.checked = !menuCheckbox.checked;
+    menuLabel.setAttribute("aria-expanded", menuCheckbox.checked);
+  }
+}
+
 // slideshow
 let slideIndex = 1;
 showSlides(slideIndex);

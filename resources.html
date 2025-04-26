@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="/images/arbor day site favicon.png">
+<link rel="icon" type="image/x-icon" href="/images/arbor_day_site_favicon.png">
 <title>Arbor-Day-Website-Resource-Pg</title>
 </head>
 <body>
@@ -22,11 +22,10 @@
     <!-- Always visible items in the nav bar -->
     <!-- <a href="index.html" class="home"><img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo"></a> -->
     <!-- The hamburger menu -->
-    <label for='menu' tabindex="0"  aria-label="navigation bar">
-    <i class="fa-solid fa-bars"></i>
-    </label>
-    </label>
-    <input id='menu' type='checkbox'/>
+    <label for="menu" tabindex="0" aria-label="navigation bar" aria-expanded="false" onkeydown="toggleMenu(event)">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <input id="menu" type="checkbox">
     <!-- The collapsable menu -->
     <ul>
         <li><a href = "index.html">Home</a></li>
@@ -54,8 +53,9 @@
             <li><i class="fa-solid fa-tree"></i><a href = "https://www.a2gov.org/trash-recycle-compost/recycle/">Ann Arbor Recycling</a></li>
             <li><i class="fa-solid fa-tree"></i><a href = "https://www.recycleannarbor.org/a-z-recycling-guide">A-Z Recycling Guide</a></li>
         </ul>
-        <img src="images/walnut tree illustration vector beige.png" alt="walnut tree illustration">
-        </div>
+        <img src="images/walnut_tree_illustration_vector_beige.png" alt="walnut tree illustration">
+        <!-- walnut tree illustration - https://timelessmoon.getarchive.net/amp/media/walnut-tree-77b701 -->
+    </div>
     </main>
 
     <footer>
@@ -63,7 +63,7 @@
       <p id="soundCopyright">Relaxing Forest Birds Chirping in the North Woods by taavhaap on freesound.org</p>
 
         </footer>
-</body>
-<script src="js/animations.js">
+        <script src="js/animations.js">
   </script>
+    </body>
 </html>
