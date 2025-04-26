@@ -1,15 +1,19 @@
 html, body {
     height: 100%; /* Ensure the root elements have a height */
     margin: 0;
+    padding: 0;
+    background-color: rgb(42, 56, 39);
 }
 
 main {
     height: 100%; /* Ensure the parent container has a height */
     background-color: rgb(42, 56, 39);
+    padding: 0;
+    margin: 0;
 }
 
 #content {
-    background-color: rgb(42, 56, 39);
+    background-color: #2a3827;
     color:beige;
     height: 100%;
     display: grid;
@@ -23,7 +27,7 @@ main {
 #poem-div {
    grid-column: 2 / span 3;
    grid-row: 1 / span 1;
-   background-color: beige;
+   background-color: #f5f5dc;
    color:rgb(52, 33, 14);
    padding: 1.8rem;
    margin-top: 7rem;
@@ -45,7 +49,7 @@ main {
     /* width: 80%; */
 }
 
-#poem-div h2 {
+#poem-div h1, h2 {
     font-size: 1.4rem;
     margin: .25rem;
     /* align-self: flex-end; */
@@ -76,10 +80,13 @@ main {
 }
 
 img {
-    max-height: 60vh;
+    max-height: 45vh;
     /* margin: .25rem; */
 }
-.skip {
+.visually-hidden {
+    visibility: hidden;
+}
+/* .skip {
     position: absolute;
    left: -10000px;
    width: auto;
@@ -92,7 +99,7 @@ img {
    position: absolute;
    top: 20px;
    left: auto;
- }
+ } */
  /* code from threkk @ medium.com: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399 */
  input[type="checkbox"] {
     display: none; /* Hides the checkbox */
@@ -228,6 +235,9 @@ html {
 a:hover {
     opacity: .6;
 }
+a:visited{
+    color: #377535;
+}
 
 /* Styles for the hero image */
 
@@ -289,14 +299,17 @@ a:hover {
 .link{
     color: #58be54;
   /* color: rgb(42, 56, 39); */
-  font-size: 2rem;
+  font-size: 3rem;
   text-decoration: underline;
   /* position: absolute;
   bottom: 25px; */
   width: 100%;
   text-align: center;
 }
-
+#arborDayLink {
+        display: inline-block;
+        margin: 0 auto;
+}
 /* Number text (1/3 etc) */
 .numbertext {
   color: beige;
@@ -340,19 +353,24 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: .5rem;
     background-color: rgb(42, 56, 39);
 }
-#resource-content h2 {
-    color: beige;
+#resource-content h1 {
+    color: #58BE54f2;
+    font-weight: bold;
     font-size: 2rem;
-    margin-top: 3rem;
-    /* padding: 1rem; */
+    text-align: center;
+    z-index: 1000;
+    margin: .5rem;
+}
+#resource-content h2 {
+    color: #f5f5dc;
+    font-size: 2rem;
     text-align: center;
 }
 .resource-list {
-    color:rgb(52, 33, 14);
-    padding: 1rem;
+    color:#34210e;
 }
 .resource-list>* {
    background-color: #58be54b1;
@@ -368,6 +386,18 @@ a:hover {
     margin-top: 3rem;
 }
 
+#resource-content a {
+    color: #281A0B;
+}
+
+i {
+    color: beige;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+#resource-content i {
+    color: rgb(42, 56, 39);
+}
 footer {
     grid-column: unset; /* Ensure it's not part of any grid */
     grid-row: unset;
@@ -379,8 +409,43 @@ footer {
     text-align: center;
     background-color: rgb(42, 56, 39); /* Match the theme */
     color: beige;
-    padding: 1rem;
-    height: 3rem;
+    /* padding: 1rem; */
+    height: 4.5rem;
+}
+footer p {
+    margin-top: .5rem;
+}
+#soundCopyright {
+    opacity: .5;
+}
+
+audio::-webkit-media-controls-panel {
+    display: flex;
+    justify-content: space-between;
+    background-color: #67af44;
+    /* color: beige; Text color for the audio player */
+}
+
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button {
+    display: none; /* Hide unwanted controls */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-control {
+    display: block; /* Ensure play button and volume control are visible */
+}
+
+#audioPlayer {
+    grid-column: 2 / span 3;
+    grid-row: 3 / span 1;
+    /* display: inline-block; */
+    margin: 2rem auto;
+    text-align: center;
+    /* border:#FFCB05 2px solid; */
 }
 
 /* Big Phone */
@@ -414,6 +479,13 @@ nav ul {
 }
 #resource-content h2 {
     margin-top: 6rem;
+}
+
+#resource-content h1 {
+    font-size: 3rem;
+    text-align: center;
+    z-index: 1000;
+    margin: 1rem;
 }
 
 }
@@ -492,6 +564,10 @@ nav ul {
         color: beige;
         font-size: 2rem;
         margin-top: 2rem;
+}
+#audioPlayer {
+    grid-column: 5 / span 1;
+    grid-row: 3 / span 1;
 }}
 
 /* Bigger Desktop */
@@ -507,6 +583,10 @@ nav ul {
      #story {
         grid-column: 5 / span 2;
      }
+     #audioPlayer {
+        grid-column: 7 / span 1;
+        grid-row: 3 / span 1;
+    }
 }
 /* For Debugging */
 /* #content {
@@ -516,6 +596,5 @@ nav ul {
 /* #content > * {
     border: 1px solid blue; /* Border around each grid item
 } */
-
 
 

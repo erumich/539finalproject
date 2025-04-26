@@ -62,8 +62,8 @@ function showSlides(n) {
     document.getElementById("author").style.color = "beige";
     document.getElementById("arbor-day-msg").style.color = "beige";
     document.getElementById("arbor-day-msg").style.fontSize = "3rem";
-     document.getElementById("arbor-day-link").style.color = "#58be54";
-    document.getElementById("arbor-day-link").style.fontSize = "3rem";
+     document.getElementById("arborDayLink").style.color = "#58be54";
+    document.getElementById("arborDayLink").style.fontSize = "3rem";
     document.getElementById("line 17").style.color = "rgb(52, 33, 14)";
   }
 }
@@ -108,5 +108,24 @@ function showPoem(n) {
   console.log("Number of poem elements:", poemSlides.length);
 }
 
-
+function handleKey(event, direction) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault(); // Prevent default scrolling behavior for Space
+    plusSlides(direction); // Call the same function as the click event
+  }
+}
   // source: https://stackoverflow.com/questions/42572840/adding-media-queries-from-js
+
+  function updateSlideStatus(current, total) {
+    const slideStatus = document.getElementById("slideStatus");
+    slideStatus.textContent = `Slide ${current} of ${total}`;
+  }
+// Audio Controls
+document.getElementById("forestSounds").loop = true;
+
+let aud = document.getElementById("forestSounds");
+aud.controls = true;
+
+
+
+
